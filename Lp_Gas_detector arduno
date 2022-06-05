@@ -1,0 +1,28 @@
+void setup() {
+  pinMode(A0,INPUT);
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  Serial.begin(9600);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+float gas = analogRead(A0);
+Serial.println(gas);
+
+if(gas > 250)
+{
+  digitalWrite(13,HIGH);
+  delay(55);
+  digitalWrite(13,LOW);
+  delay(55);
+  digitalWrite(12,LOW);
+  }
+ 
+else{
+  digitalWrite(12,HIGH);
+  digitalWrite(13,LOW);
+  }
+}
